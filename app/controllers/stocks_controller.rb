@@ -13,7 +13,22 @@ class StocksController < ApplicationController
         end
     end
     def create
-        stock = Stock.create(name: params[:name], quantity: params[:quantity], description: params[:description])
+        stock = Stock.create(stock_params)
         render json: stock, status: :created
+    end
+
+    def update
+        stock = Stock.find_by(id: params[:id])
+        if stock
+            stock.update(stock_params)
+            render json: stock
+        else
+            render json: {error: "Stock not found"}, status: :not_found
+        end
+    end
+
+    private
+    def stock_params
+        params.permit(:name, :quantity, :description)
     end
 end
