@@ -27,6 +27,16 @@ class StocksController < ApplicationController
         end
     end
 
+    def destroy
+        stock = Stock.find_by(id: params[:id])
+        if stock
+            stock.destroy
+            head :no_content
+        else 
+            render json: {error: "Stock not found"}, status: :not_found 
+        end 
+    end
+
     private
     def stock_params
         params.permit(:name, :quantity, :description)
