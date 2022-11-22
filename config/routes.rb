@@ -4,4 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :stocks
+
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? } 
+
+  class FallbackController < ActionController::Base
+    def index
+      render file: 'public/index.html'
+    end
+  end
 end
