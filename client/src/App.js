@@ -1,18 +1,20 @@
 import {useState,useEffect} from "react";
 import './App.css';
+import StockList from "./components/StockList";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [stock, setStock] = useState([]);
 
   useEffect(() => {
-    fetch("/hello")
+    fetch("/stocks")
       .then((r) => r.json())
-      .then((data) => setCount(data.count));
+      .then((data) => setStock(data));
   }, []);
 
   return (
     <div className="App">
-      <h1>Page Count: {count}</h1>
+      <h1>Stock</h1>
+      <StockList stock={stock}/>
     </div>
   );
 }
