@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* To view the deployed version visit
+
+(https://phase-4-project-rails.herokuapp.com)
