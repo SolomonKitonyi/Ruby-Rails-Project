@@ -7,7 +7,7 @@ function NewStock () {
     const [description,setDescription] = useState("")
     const history = useHistory();
     function createStock() {
-        history.push("/stocks")
+        history.push("/")
         alert("Stock created")
         window.location.reload(false)
     }
