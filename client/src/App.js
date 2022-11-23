@@ -1,5 +1,7 @@
 import {useState,useEffect} from "react";
 import './App.css';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import StockList from "./components/StockList";
 
 function App() {
@@ -13,8 +15,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Stock</h1>
+      <Header />
       <StockList stock={stock}/>
+      <Footer />
     </div>
   );
 }
