@@ -10,6 +10,10 @@
   height: 70px;
   align-items: center;
 }
+a {
+  text-decoration: none;
+  color:black;
+}
 
 .header-item:hover {
   cursor: pointer;
@@ -35,4 +39,36 @@
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+}
+.view-item-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+button {
+  background: blue;
+  width: 300px;
+  height: 35px;
+  margin: 10px;
+}
+input {
+  height: 30px;
+  width: 300px;
+}
+.new-stock-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  width: 310px;
+  background: forestgreen;
+}
+.new-cont {
+  margin-left: 30%;
+  height: 77vh;
 }
