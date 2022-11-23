@@ -4,8 +4,9 @@ import StockItem from "./StockItem"
 function StockList({stock}){
     return (
         <div>
-            <ul>{stock.map(item => (
-                <StockItem key={item.id} item={item}/>
+            <h1 style={{color: "gray"}}>Stock</h1>
+            <ul className="stock-list" >{stock.map(item => (
+                <StockItem key={item.id} item={item} onClick={() => alert("Clicked")}/>
             ))}</ul>
         </div>
     )
